@@ -11,17 +11,10 @@ import syscom.dao.ProdutoDao;
 public class Teste {
 
 	public static void main(String[] args) {
-		
-		var produto = new Produto("Bermuda Masculina Estampada", "Bermuda Masculina",
-				50.99, null);
 
-		try {
-			var cn = new ConnectionFactory().getConnectionMySql();
-			new ProdutoDao(cn).cadastrar(produto);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		var controller = new ProdutoController();
+		var produtos = controller.listarTodos();
+		System.out.println(produtos);
 		
 	}
 

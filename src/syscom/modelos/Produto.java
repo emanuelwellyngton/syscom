@@ -7,20 +7,25 @@ public class Produto {
 	private String categoria;
 	private double preco;
 	private String imagem;
+	private boolean status;
 	
-	public Produto(int id, String descritor, String categoria, double preco, String imagem) {
+	public Produto(int id, String descritor, String categoria, double preco,
+			String imagem, boolean status) {
 		this.id = id;
 		this.descritor = descritor;
 		this.categoria = categoria;
 		this.preco = preco;
 		this.imagem = imagem;
+		this.status = status;
 	}
 	
-	public Produto(String descritor, String categoria, double preco, String imagem) {
+	public Produto(String descritor, String categoria, double preco, String imagem,
+			boolean status) {
 		this.descritor = descritor;
 		this.categoria = categoria;
 		this.preco = preco;
 		this.imagem = imagem;
+		this.status = status;
 	}
 	
 	public String getDescritor() {
@@ -58,11 +63,19 @@ public class Produto {
 	public int getId() {
 		return id;
 	}
+	
+	public boolean getStatus() {
+		return this.status;
+	}
+	
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", descritor=" + descritor + ", categoria=" + categoria + ", imagem=" + imagem
-				+ "]";
+		return "Produto [id=" + id + ", descritor=" + descritor + ", categoria=" + categoria + "preco=" + preco +", imagem=" + imagem
+				+ ", status=" + status + "]";
 	}
 
 }
